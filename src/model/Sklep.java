@@ -7,36 +7,44 @@ import java.util.List;
 public class Sklep {
 
     private String nazwa;
-    private List<Alkohol> alkohole;
+    private List<Produkt> produkty;
+
 
     public Sklep(String nazwa) {
         this.nazwa = nazwa;
-        this.alkohole = new ArrayList<>();
+        this.produkty = new ArrayList<>();
+
     }
 
-    public void dodajAlkohol(Alkohol alkohol) {
-        alkohole.add(alkohol);
+    public void dodaj(Produkt produkt) {
+        produkty.add(produkt);
     }
 
-    public void usunAlkohol(int id) {
-        //      for (Alkohol alkohol : alkohole) {
-        //          if (alkohol.id == id) {
-        //              alkohole.remove(alkohol);
-        Iterator<Alkohol> iterator = alkohole.iterator();
+
+    public void usun(int id) {
+
+        Iterator<Produkt> iterator = produkty.iterator();
 
         while (iterator.hasNext()) {
-            Alkohol alkohol = iterator.next();
-            if (alkohol.getId() == id) {
+            Produkt produkt = iterator.next();
+            if (produkt.getId() == id) {
                 iterator.remove();
             }
+        }
 
+    }
+
+
+    public String toString() {
+
+        String rezultat = "";
+        System.out.println("ID: Nazwa:  Cena:   Pojemność:  Procent:    ");
+        for (Produkt produkt : produkty) {
+            rezultat += produkt + "\n";
 
         }
+        return rezultat;
+
+
     }
-
-    public void wyswietl() {
-        System.out.println(alkohole);
-    }
-
-
 }

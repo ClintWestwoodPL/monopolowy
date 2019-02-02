@@ -1,30 +1,25 @@
 package model;
 
 import java.math.BigDecimal;
+import java.security.PublicKey;
 
-public class Alkohol {
+public class Alkohol extends Produkt {
 
-    private static int generator = 1;
 
-    private int id;
-    private String nazwa;
-    private BigDecimal cena;
     private String litraz;
     private String procent;
 
     public Alkohol (String nazwa, BigDecimal cena, String litraz, String procent){
-
-        this.id = generator++;
-        this.nazwa = nazwa;
-        this.cena = cena;
+        super(nazwa,cena);
         this.litraz = litraz;
         this.procent = procent;
 
 
     }
 
-    public int getId() {
-        return id;
+    @Override
+    public String getTyp () {
+        return "alko";
     }
 
 
