@@ -20,4 +20,10 @@ public class Papierosy extends Produkt{
     public String getTyp() {
         return "papierosy";
     }
+    @Override
+    public String toString() {
+        return super.toString() + "\t" +
+                this.rodzaj + "\t" +
+                this.sztuki + "\t";
+    }
 }
