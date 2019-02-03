@@ -1,0 +1,11 @@
+{
+  "nazwa" : "Wielbłąd",
+  "produkty" : [ {
+    "type" : "alkohol",
+    "id" : 1,
+    "nazwa" : "woda",
+    "cena" : 12,
+    "litraz" : "2",
+    "procent" : "21"
+  } ]
+}

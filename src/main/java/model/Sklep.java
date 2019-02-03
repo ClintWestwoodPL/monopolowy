@@ -10,6 +10,8 @@ public class Sklep implements Serializable {
     private String nazwa;
     private List<Produkt> produkty;
 
+    public Sklep() {
+    }
 
     public Sklep(String nazwa) {
         this.nazwa = nazwa;
@@ -46,5 +48,21 @@ public class Sklep implements Serializable {
         return rezultat;
 
 
+    }
+
+    public String getNazwa() {
+        return nazwa;
+    }
+
+    public List<Produkt> getProdukty() {
+        return produkty;
+    }
+
+    public void setNazwa(String nazwa) {
+        this.nazwa = nazwa;
+    }
+
+    public void setProdukty(List<Produkt> produkty) {
+        this.produkty = produkty;
     }
 }

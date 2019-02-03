@@ -4,7 +4,8 @@ import java.math.BigDecimal;
 import java.security.PublicKey;
 
 public class Alkohol extends Produkt {
-
+    public Alkohol() {
+    }
 
     private String litraz;
     private String procent;
@@ -28,5 +29,19 @@ public class Alkohol extends Produkt {
                 this.procent + "\t";
     }
 
+    public String getLitraz() {
+        return litraz;
+    }
 
+    public String getProcent() {
+        return procent;
+    }
+
+    public void setLitraz(String litraz) {
+        this.litraz = litraz;
+    }
+
+    public void setProcent(String procent) {
+        this.procent = procent;
+    }
 }

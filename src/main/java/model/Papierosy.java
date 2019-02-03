@@ -26,4 +26,23 @@ public class Papierosy extends Produkt{
                 this.rodzaj + "\t" +
                 this.sztuki + "\t";
     }
+
+    public Papierosy() {
+    }
+
+    public String getRodzaj() {
+        return rodzaj;
+    }
+
+    public int getSztuki() {
+        return sztuki;
+    }
+
+    public void setRodzaj(String rodzaj) {
+        this.rodzaj = rodzaj;
+    }
+
+    public void setSztuki(int sztuki) {
+        this.sztuki = sztuki;
+    }
 }

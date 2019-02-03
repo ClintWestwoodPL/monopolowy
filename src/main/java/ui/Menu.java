@@ -1,6 +1,7 @@
 package ui;
 
 import io.OdczytZapis;
+import io.OdczytZapisJson;
 import model.Alkohol;
 import model.Papierosy;
 import model.Sklep;
@@ -29,7 +30,8 @@ public class Menu {
 
     public void podaj() {
         Scanner in = new Scanner(System.in);
-        OdczytZapis pliki = new OdczytZapis();
+        OdczytZapisJson pliki = new OdczytZapisJson();
+      //  OdczytZapis pliki = new OdczytZapis();
         Sklep sklep;
         try {
             sklep = pliki.odczyt();
@@ -101,7 +103,8 @@ public class Menu {
                     System.out.println(sklep);
                     break;
                 case "q":
-                    pliki.zapis(sklep);
+                    pliki.zapisz(sklep);
+
                     System.out.println("Koniec programu");
 
                     break;

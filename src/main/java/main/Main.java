@@ -1,5 +1,6 @@
 package main;
 
+import io.OdczytZapisJson;
 import ui.Menu;
 
 public class Main {
@@ -8,6 +9,7 @@ public class Main {
         Menu menuAplikacji = new Menu();
         menuAplikacji.wyswietl();
         menuAplikacji.podaj();
+
     }
 
 }
