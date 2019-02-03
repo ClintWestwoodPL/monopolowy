@@ -24,7 +24,7 @@ public class Menu {
         System.out.println("1 - dodaj alkohol");
         System.out.println("2 - dodaj papierosy");
         System.out.println("2 - usun");
-        System.out.println("4 - wyswietl");
+        System.out.println("4 - wyświetl");
         System.out.println("q - wyjdź");
     }
 
