@@ -1,5 +1,6 @@
 package ui;
 
+import io.OdczytZapis;
 import model.Alkohol;
 import model.Papierosy;
 import model.Sklep;
@@ -16,6 +17,9 @@ public class Menu {
 
     public void wyswietl() {
 
+
+
+
         System.out.println("1 - dodaj alkohol");
         System.out.println("2 - dodaj papierosy");
         System.out.println("2 - usun");
@@ -25,7 +29,16 @@ public class Menu {
 
     public void podaj() {
         Scanner in = new Scanner(System.in);
-        Sklep sklep = new Sklep("Wielbłąd");
+        OdczytZapis pliki = new OdczytZapis();
+        Sklep sklep;
+        try {
+            sklep = pliki.odczyt();
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("nie udało się wczytać sklepu");
+            sklep = new Sklep("Wielbłąd");
+        }
+
 
         String wybor;
 
@@ -88,7 +101,9 @@ public class Menu {
                     System.out.println(sklep);
                     break;
                 case "q":
+                    pliki.zapis(sklep);
                     System.out.println("Koniec programu");
+
                     break;
                 default:
                     System.out.println("Błędna opcja, podaj jeszcze raz: ");
