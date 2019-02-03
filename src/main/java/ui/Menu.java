@@ -2,6 +2,7 @@ package ui;
 
 import io.OdczytZapis;
 import io.OdczytZapisJson;
+import io.OperacjePlikowe;
 import model.Alkohol;
 import model.Papierosy;
 import model.Sklep;
@@ -30,13 +31,22 @@ public class Menu {
 
     public void podaj() {
         Scanner in = new Scanner(System.in);
-        OdczytZapisJson pliki = new OdczytZapisJson();
-      //  OdczytZapis pliki = new OdczytZapis();
+
+        System.out.println("Podaj format zapisu plików 1 dla Json 2 dla Bin: ");
+        String typ = in.nextLine();
+
+        OperacjePlikowe pliki;
+        if (typ.equalsIgnoreCase("1")) {
+            pliki = new OdczytZapisJson();
+        } else {
+            pliki = new OdczytZapis();
+        }
+
+
         Sklep sklep;
         try {
             sklep = pliki.odczyt();
         } catch (Exception e) {
-            e.printStackTrace();
             System.out.println("nie udało się wczytać sklepu");
             sklep = new Sklep("Wielbłąd");
         }
@@ -103,7 +113,7 @@ public class Menu {
                     System.out.println(sklep);
                     break;
                 case "q":
-                    pliki.zapisz(sklep);
+                    pliki.zapis(sklep);
 
                     System.out.println("Koniec programu");
 

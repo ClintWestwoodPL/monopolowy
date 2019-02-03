@@ -6,7 +6,7 @@ import model.Sklep;
 import java.io.File;
 import java.io.IOException;
 
-public class OdczytZapisJson {
+public class OdczytZapisJson implements OperacjePlikowe {
 
     private  ObjectMapper mapper = new ObjectMapper();
 
@@ -16,14 +16,14 @@ public class OdczytZapisJson {
         Sklep sklep =
                 mapper.readValue(new File("sklep.json"), Sklep.class);
 
-        System.out.println(sklep);
+       // System.out.println(sklep);
 
         return sklep;
 
     }
 
 
-    public void zapisz (Sklep sklep) {
+    public void zapis (Sklep sklep) {
 
       //  Sklep sklep = null;
 
